@@ -1,0 +1,107 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+// My variables
+$base-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+$base-font-size:   17px;
+$base-font-weight: 400;
+
+$text-color:       #333;
+$background-color: #fdfdfd;
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+
+
+
+/**
+ * Reset basic elements
+ */
+
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * Layout
+ */
+
+body {
+    margin: 0 auto;
+    max-width: 900px;
+    line-height: 1.6;
+    font-size: $base-font-size;
+    font-weight: $base-font-weight;
+    color: $text-color;
+    padding: 0 10px;
+    background-color: $background-color;
+    font-family: $base-font-family;
+}
+
+#top, footer { 
+    margin: 20px 0;
+    display: flex; 
+    justify-content: space-between;
+    border-bottom: solid 1px $grey-color;
+}
+
+footer { border-bottom: none; border-top: solid 1px $grey-color; }
+
+.post-content p, page-content p {
+    line-height: 1.6;
+    margin: 1em 0;
+}
+
+.post-list-item { margin-bottom: 20px; }
+
+/**
+ * Text
+ */
+
+h1,h2,h3 { 
+    line-height: 1.4; 
+    font-weight: $base-font-weight * 2; 
+}
+
+#top h1 { 
+    font-size: $base-font-size * 1.2;
+}
+#top h1 { text-decoration: none; }
+
+p {
+    font-weight: 400;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+
+/**
+ * Code formatting
+ */
+ 
+pre, code {
+    font-size: 15px;
+    border: 1px solid $grey-color-light;
+    border-radius: 3px;
+    background-color: #eef;
+}
+
+code {
+    padding: 1px 5px;
+}
+
+pre {
+    padding: 8px 12px;
+    overflow-x: auto;
+
+    > code {
+        border: 0;
+        padding-right: 0;
+        padding-left: 0;
+    }
+}

@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chris Peterson - Mostly Code</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-<header>
-	<h1>Mostly Code</h1>
-</header>
-<main>
-	<p><em>Hi, I'm Chris</em> and this is my personal website.</p>
-</main>
-</body>
-</html>
+---
+layout: default
+---
+
+<div class="home">
+
+  <div class="post-list">
+    {% for post in site.posts %}
+      <div class="post-list-item">
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+        {{ post.excerpt }}
+        <p><a href="{{ post.url }}">Continue -></a></p>
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
