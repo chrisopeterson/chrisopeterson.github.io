@@ -1,11 +1,20 @@
-<div id="top">
+<div id="sidebar-content">
     <a class="site-title" href="{{ site.baseurl }}/"><h1>{{ site.title }}</h1></a>
 
-    <nav class="site-nav">
-     {% for my_page in site.pages %}
-        {% if my_page.title %}
-        <a class="page-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-        {% endif %}
-      {% endfor %}
-    </nav>
+    <p>what even is a website?</p>
+
+    <ul>
+        <li><a href="{{ "/feed.xml" | prepend: site.baseurl }}">RSS Feed</a></li>
+        <li><a href="https://github.com/chrisopeterson">Github</a></li>
+        <li><a href="https://twitter.com/ChrisOPeterson">Twitter</a></li>
+        <li><a href="{{ site.baseurl }}/Resume">Resume</a></li>
+    </ul>
+
+    <h2>Recent Posts</h2>
+
+    <ul>
+        {% for post in site.posts limit:20 %}
+          <li><a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></li>
+        {% endfor %}
+    </ul>
 </div>

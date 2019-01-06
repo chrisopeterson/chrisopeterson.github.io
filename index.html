@@ -1,19 +1,21 @@
 ---
 layout: default
 ---
+<div class="post-list">
+  {% for post in site.posts limit:5 %}
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
-<div class="home">
-
-  <div class="post-list">
-    {% for post in site.posts %}
-      <div class="post-list-item">
-        <h2>
-          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        {{ post.excerpt }}
-        <p><a href="{{ post.url }}">Continue -></a></p>
+      <div class="post-header">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          <h2 class="post-title" itemprop="name headline">{{ post.title }}</h2>
+        </a>
+        <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></p>
       </div>
-    {% endfor %}
-  </div>
-
+    
+      <div class="post-content" itemprop="articleBody">
+        {{ post.content }}
+      </div>
+    
+    </article>
+  {% endfor %}
 </div>
